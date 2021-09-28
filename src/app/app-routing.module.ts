@@ -1,3 +1,4 @@
+import { AddProductGuard } from './add-product/add-product.guard';
 import { AddProductComponent } from './add-product/add-product.component';
 import { ProductsComponent } from './products/products.component';
 import { HomeComponent } from './home/home.component';
@@ -6,7 +7,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {path: '',             component: HomeComponent},
-  {path: 'products/new', component: AddProductComponent},
+  {path: 'products/new', component: AddProductComponent, canDeactivate:[AddProductGuard]},
   {path: 'products' ,    component: ProductsComponent}
   
 ];
